@@ -1,3 +1,4 @@
+# deque implementaion by meghana
 class Node:
     def __init__(self, item):
         self.item = item
