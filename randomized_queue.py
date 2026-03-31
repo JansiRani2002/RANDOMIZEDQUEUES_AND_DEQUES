@@ -43,7 +43,11 @@ class RandomizedQueue:
         return random.choice(self.data)
 
     def __iter__(self):
-        shuffled = self.data.copy()
+        if self.is_empty():
+            return iter([])
+
+        shuffled = self.items.copy()
         random.shuffle(shuffled)
-        for item in shuffled:
-            yield item
+        return iter(shuffled)
+    
+    
