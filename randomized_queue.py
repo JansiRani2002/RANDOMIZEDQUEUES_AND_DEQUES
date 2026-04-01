@@ -14,8 +14,13 @@ class RandomizedQueue:
 
     def enqueue(self, item):
         if item is None:
-            raise ValueError("Item cannot be None")
-        self.data.append(item)
+            raise ValueError("Cannot enqueue None item")
+
+        # prevent accidental enqueue of empty string
+        if item == "":
+            raise ValueError("Empty items are not allowed")
+
+        self.items.append(item)
 
     def dequeue(self):
         if self.is_empty():
@@ -38,7 +43,11 @@ class RandomizedQueue:
         return random.choice(self.data)
 
     def __iter__(self):
-        shuffled = self.data.copy()
+        if self.is_empty():
+            return iter([])
+
+        shuffled = self.items.copy()
         random.shuffle(shuffled)
-        for item in shuffled:
-            yield item
+        return iter(shuffled)
+    
+    
