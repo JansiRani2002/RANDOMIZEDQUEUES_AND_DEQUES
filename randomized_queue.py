@@ -20,7 +20,7 @@ class RandomizedQueue:
         if item == "":
             raise ValueError("Empty items are not allowed")
 
-        self.items.append(item)
+        self.data.append(item)
 
     def dequeue(self):
         if self.is_empty():
@@ -46,7 +46,7 @@ class RandomizedQueue:
         if self.is_empty():
             return iter([])
 
-        shuffled = self.items.copy()
+        shuffled = self.data.copy()
         random.shuffle(shuffled)
         return iter(shuffled)
     

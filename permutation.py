@@ -12,7 +12,7 @@ for item in items:
 # Read k
 k = int(input("How many random items to print? "))
 
-# Validate k
+# Validate that k doesnot exceed the number of inputs 
 if k > rq.size():
     raise ValueError("k cannot be greater than number of input words")
 
