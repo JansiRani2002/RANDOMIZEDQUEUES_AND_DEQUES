@@ -17,8 +17,18 @@ class Deque:
     def size(self):
         return self.n
     
-    def __len__(self):              
-        return self.n
+    def clear(self):              
+        self.first = None
+        self.last = None
+        self.n = 0
+
+    def contains(self, item):     
+        current = self.first
+        while current:
+            if current.item == item:
+                return True
+            current = current.next
+        return False
 
     def add_first(self, item):
         if item is None:
@@ -85,6 +95,8 @@ class Deque:
         return item
 
     def __iter__(self):
+        if self.is_empty():
+            return
         current = self.first
         while current:
             yield current.item
