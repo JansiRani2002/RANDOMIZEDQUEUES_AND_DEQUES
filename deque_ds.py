@@ -16,10 +16,15 @@ class Deque:
 
     def size(self):
         return self.n
+    
+    def __len__(self):              
+        return self.n
 
     def add_first(self, item):
         if item is None:
             raise ValueError("Item cannot be None")
+        if item == "":              
+            raise ValueError("Item cannot be empty string")
 
         new_node = Node(item)
         new_node.next = self.first
@@ -35,6 +40,8 @@ class Deque:
     def add_last(self, item):
         if item is None:
             raise ValueError("Item cannot be None")
+        if item == "":              
+            raise ValueError("Item cannot be empty string")
 
         new_node = Node(item)
         new_node.prev = self.last
