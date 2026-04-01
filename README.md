@@ -186,3 +186,12 @@ After completing this project we learned:
 
 Developed as part of a **Data Structures & Algorithms assignment**.
 
+
+Note on Commit 219bdda
+
+The commit message indicates changes to the RandomizedQueue, 
+but the actual modifications were made in deque_ds.py to add 
+validation improvements and utility methods.
+
+This note clarifies the intent of that commit.
+
